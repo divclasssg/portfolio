@@ -5,8 +5,10 @@ export default function LiverpoolLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    return (<>
-        <Globalnav />
-        {children}
-    </>);
+    return (
+        <>
+            <Globalnav />
+            {children}
+        </>
+    );
 }
