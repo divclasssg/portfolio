@@ -1,0 +1,27 @@
+.container {
+    .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 96px;
+
+        .list {
+            display: flex;
+            gap: 48px;
+
+            .nav {
+                display: flex;
+                gap: 36px;
+                align-items: center;
+            }
+        }
+
+        .utilities {
+            .list {
+                display: flex;
+                gap: 24px;
+                align-items: center;
+            }
+        }
+    }
+}
