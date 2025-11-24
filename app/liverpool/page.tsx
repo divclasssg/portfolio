@@ -1,5 +1,7 @@
+import SectionHero from "./components/hero/hero";
+
 export default function LiverpoolPage() {
     return <main>
-        <h1>Liverpool</h1>
+        <SectionHero />
     </main>;
 }
