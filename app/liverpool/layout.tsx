@@ -1,4 +1,5 @@
 import Globalnav from "./components/globalnav/globalnav";
+import "./styles/styles.scss";
 
 export default function LiverpoolLayout({
     children,

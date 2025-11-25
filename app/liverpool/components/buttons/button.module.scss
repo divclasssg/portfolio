@@ -1,0 +1,64 @@
+// globalnav join
+.join {
+    border-radius: var(--border-radius-default);
+    border: 1px solid var(--color-primary);
+    background: var(--background-color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 80px;
+    height: 32px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1em;
+    color: var(--color-primary);
+    position: relative;
+
+    .icon {
+        background: url(https://raw.githubusercontent.com/divclasssg/images/9bbe2474f68fcaea6cffa697ff81590620477c89/bls/lfc/icons/person/icon-user.svg)
+            no-repeat 0 0 / cover;
+        display: block;
+        width: 15px;
+        height: 15px;
+    }
+
+    .text {
+        transform: translateY(1px);
+    }
+}
+
+// globalnav login
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-primary);
+    padding: 0 16px;
+}
+
+// globalnav Languages
+.languages {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 32px;
+    padding: 0 16px;
+
+    .iconGlobal {
+        background: url("https://raw.githubusercontent.com/divclasssg/images/9bbe2474f68fcaea6cffa697ff81590620477c89/bls/lfc/icons/global/icon-global-black.svg")
+            no-repeat 0 0 / cover;
+        display: block;
+        width: 20px;
+        height: 20px;
+    }
+    .text {
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--color-text-primary);
+        text-transform: capitalize;
+    }
+}

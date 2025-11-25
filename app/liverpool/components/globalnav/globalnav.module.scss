@@ -1,8 +1,9 @@
 .container {
+    background: var(--background-color-primary);
     position: sticky;
     position: -webkit-sticky;
     top: 0;
-    max-width: 1920px;
+    max-width: 2560px;
     margin: 0 auto;
     z-index: 1000;
 
@@ -22,8 +23,17 @@
                 align-items: center;
 
                 .link {
-                    pointer-events: none;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 1em;
+                    color: var(--color-text-primary);
+                    text-transform: capitalize;
+                    // pointer-events: none;
                     cursor: pointer;
+
+                    &:hover {
+                        color: var(--color-primary);
+                    }
                 }
             }
         }

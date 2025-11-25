@@ -1,0 +1,16 @@
+@use "root";
+@use "font";
+
+html,
+body {
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1em;
+    color: var(--font-color-primary);
+    background-color: var(--background-color-primary);
+}
+.main {
+    max-width: 2560px;
+    margin: 0 auto;
+}

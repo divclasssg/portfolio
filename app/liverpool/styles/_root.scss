@@ -1,0 +1,140 @@
+:root {
+    // system color
+    --color-primary: var(--color-red-700);
+    --color-secondary: var(--color-yellow-500);
+    --color-tertiary: var(--color-green-500);
+    --color-neutral: var(--color-neutral-600);
+
+    --background-color-primary: var(--color-white);
+    --background-color-secondary: var(--color-gray-100);
+
+    // color black
+    --color-black: #1d1d1f;
+
+    // system gray colors
+    --color-white: #fff;
+    --color-gray-100: #F2F2F7;
+    --color-gray-200: #E5E5EA;
+    --color-gray-300: #D1D1D6;
+    --color-gray-400: #C7C7CC;
+    --color-gray-500: #AEAEB2;
+    --color-gray-600: #8E8E93;
+
+    // system red colors
+    --color-red-50: #FFEBEE;
+    --color-red-100: #FFCCD1;
+    --color-red-200: #FA9896;
+    --color-red-300: #F36F6D;
+    --color-red-400: #FE4B46;
+    --color-red-500: #FF3626;
+    --color-red-600: #F52927;
+    --color-red-700: #E31B22;
+    --color-red-800: #D60D1A;
+    --color-red-900: #C80008;
+
+    // system yellow colors
+    --color-yellow-50: #FFFDE5;
+    --color-yellow-100: #FFF9C0;
+    --color-yellow-200: #FFF595;
+    --color-yellow-300: #FEF167;
+    --color-yellow-400: #FCEC3F;
+    --color-yellow-500: #FAE700;
+    --color-yellow-600: #FFD900;
+    --color-yellow-700: #FFC000;
+    --color-yellow-800: #FFA700;
+    --color-yellow-900: #FE7A00;
+
+    // system green colors
+    --color-green-50: #FFFDE5;
+    --color-green-100: #FFF9C0;
+    --color-green-200: #FFF595;
+    --color-green-300: #FEF167;
+    --color-green-400: #FCEC3F;
+    --color-green-500: #FAE700;
+    --color-green-600: #FFD900;
+    --color-green-700: #FFC000;
+    --color-green-800: #FFA700;
+    --color-green-900: #FE7A00;
+
+    // system neutral colors
+    --color-neutral-50: #EEEFF0;
+    --color-neutral-100: #D4D8DD;
+    --color-neutral-200: #B7BFC7;
+    --color-neutral-300: #9AA5B2;
+    --color-neutral-400: #8391A0;
+    --color-neutral-500: #6D7E90;
+    --color-neutral-600: #606F7F;
+    --color-neutral-700: #4F5B68;
+    --color-neutral-800: #404853;
+    --color-neutral-900: #1D1D1F;
+
+    // typography
+
+    // font-family
+    --font-family: "LFC Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+    --font-lfc-serif: "LFC Serif", serif;
+
+    // font-color
+    --font-color-primary: var(--color-black);
+    --font-color-secondary: var(--color-neutral-600);
+    --font-color-white: var(--color-white);
+
+    // font system
+    --font-h1-family: var(--font-lfc-serif);
+    --font-h1-size: 64px;
+    --font-h1-weight: 700;
+    --font-h1-line-height: 1em;
+    --font-h1-color: var(--font-color-white);
+    --font-h1-text-border: 1px solid var(--color-secondary);
+
+    --font-h2-size: 40px;
+    --font-h2-weight: 700;
+    --font-h2-line-height: 1em;
+    --font-h2-color: var(--font-color-primary);
+    --font-h2-padding-bottom: 36px;
+
+    --font-h3-size: 32px;
+    --font-h3-weight: 700;
+    --font-h3-line-height: 1em;
+    --font-h3-color: var(--font-color-secondary);
+    --font-h3-padding-bottom: 24px;
+
+    --font-body1-size: 36px;
+    --font-body1-weight: 400;
+    --font-body1-line-height: 1.4em;
+    --font-body1-color: var(--font-color-primary);
+
+    --font-body2-size: 24px;
+    --font-body2-weight: 400;
+    --font-body2-line-height: 1.4em;
+    --font-body2-color: var(--font-color-primary);
+
+    --font-body3-family: var(--font-lfc-serif);
+    --font-body3-size: 32px;
+    --font-body3-weight: 400;
+    --font-body3-line-height: 1.4em;
+    --font-body3-color: var(--font-color-primary);
+
+    --font-caption1-size: 16px;
+    --font-caption1-weight: 400;
+    --font-caption1-line-height: 1em;
+
+    --font-caption2-size: 14px;
+    --font-caption2-weight: 400;
+    --font-caption2-line-height: 1em;
+
+    --font-globalnav-size: 16px;
+    --font-globalnav-weight: 400;
+    --font-globalnav-line-height: 1em;
+
+    // layouts
+    --layout-padding-top-and-bottom: 96px;
+    --layout-max-padding-left: 330px;
+    --layout-min-padding-left: 240px;
+    --layout-max-width: 1440px;
+    --layout-min-width: 1260px;
+
+    // border-radius
+    --border-radius-default: 12px;
+    --border-radius-small: 8px;
+}

@@ -1,0 +1,23 @@
+.container {
+    border-radius: var(--border-radius-default);
+    position: relative;
+    width: 1260px;
+    height: 780px;
+    overflow: hidden;
+
+    .image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
