@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Styles from "./button.module.scss";
 
-export default function ButtonJoin() {
+export default function ButtonGlobalnavJoin() {
     return (
         <Link href="#" className={Styles.join}>
             <span className={Styles.icon}></span>

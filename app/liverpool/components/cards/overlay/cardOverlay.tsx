@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./cardOverlay.module.scss";
+import Link from "next/link";
 
 export default function CardOverlay({
     section,
@@ -10,6 +11,7 @@ export default function CardOverlay({
 }) {
     return section === "featured" ? (
         <div className={styles.container}>
+            <Link href="#" className={styles.link}></Link>
             <div className={styles.image}>
                 <Image src={item.image} alt="" width={1260} height={780} />
             </div>

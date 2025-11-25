@@ -35,6 +35,75 @@
             backdrop-filter: blur(12px);
             width: 39.43%;
             overflow: hidden;
+            color: var(--font-color-white);
+            text-align: right;
+            padding: 39px 48px 0 0;
+
+            .badge {
+                font: {
+                    size: 16px;
+                    weight: 700;                    
+                };
+                line-height: 1em;
+                text-transform: uppercase;
+                padding-bottom: 12px;
+            }
+
+            .competition {
+                font: {
+                    size: 14px;
+                    weight: 400;                    
+                };
+                line-height: 1em;
+                text-transform: uppercase;
+                padding-bottom: 4px;
+            }
+
+            .info {
+                font: {
+                    size: 16px;
+                    weight: 400;                    
+                }
+                line-height: 1em;
+                text-transform: capitalize;
+                padding-bottom: 16px;
+            }
+
+            .result {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                width: 227px;
+                margin-left: auto;
+                padding-bottom: 32px;
+
+                .opponent {
+                    display: flex;
+                    justify-content: space-between;
+                    font: {
+                        size: 24px;
+                        weight: 400;                        
+                    };
+                    line-height: 1em;
+                    text-transform: uppercase;
+
+                    .score {
+                        padding-right: 4px;
+                    }
+                }
+
+                .liverpool {
+                    display: flex;
+                    justify-content: space-between;
+                    font: {
+                        family: var(--font-lfc-serif);
+                        size: 32px;
+                        weight: 700;                        
+                    };
+                    line-height: 1em;
+                    text-transform: uppercase;
+                }
+            }
         }
 
         .nextMatch {
@@ -45,6 +114,72 @@
             backdrop-filter: blur(12px);
             width: 60.57%;
             overflow: hidden;
+            padding: 39px 0 0 48px;
+
+            .badge {
+                font: {
+                    size: 16px;
+                    weight: 700;                    
+                };
+                line-height: 1em;
+                text-transform: uppercase;
+                padding-bottom: 12px;
+            }
+
+            .competition {
+                font: {
+                    size: 14px;
+                    weight: 400;                    
+                };
+                line-height: 1em;
+                text-transform: uppercase;
+                padding-bottom: 4px;
+            }
+
+            .info {
+                font: {
+                    size: 16px;
+                    weight: 700;                    
+                }
+                line-height: 1em;
+                text-transform: capitalize;
+                padding-bottom: 16px;
+            }
+
+            .result {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                width: 227px;
+
+                .opponent {
+                    display: flex;
+                    justify-content: space-between;
+                    font: {
+                        size: 24px;
+                        weight: 400;                        
+                    };
+                    line-height: 1em;
+                    text-transform: uppercase;
+
+                    .score {
+                        padding-right: 4px;
+                    }
+                }
+
+                .liverpool {
+                    display: flex;
+                    justify-content: space-between;
+                    font: {
+                        family: var(--font-lfc-serif);
+                        size: 32px;
+                        weight: 700;                        
+                    };
+                    line-height: 1em;
+                    color: var(--color-primary);
+                    text-transform: uppercase;
+                }
+            }
         }
     }
 }

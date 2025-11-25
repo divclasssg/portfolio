@@ -62,3 +62,43 @@
         text-transform: capitalize;
     }
 }
+
+// button Text
+.text {
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    line-height: 1em;
+    text-transform: capitalize;
+    
+
+    &.xlarge {
+        font-size: 40px;
+    }
+    
+    &.large {
+        font-size: 32px;
+    }
+    
+    &.medium {
+        font-size: 16px;
+    }
+    
+    &.small {
+        font-size: 14px;
+    }
+
+    svg {
+        transition: transform 0.2s ease-in-out;
+    }
+
+    &:hover {
+        svg {
+            transform: translate3d(2px, 0, 0);
+        }
+    }
+}
+
+

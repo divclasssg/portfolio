@@ -1,0 +1,105 @@
+.swiper-centered {
+    .swiper {
+        width: 100%;
+
+        .swiper-slide {
+            border-radius: var(--border-radius-default);
+            text-align: center;
+            font-size: 18px;
+            background: #444;
+
+            /* Center slide text vertically */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 1260px !important;
+            height: 780px !important;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .indicator-container {
+        max-width: 1260px;
+        margin: 0 auto;
+        padding-top: 24px;
+
+        .controller {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+
+            .swiper-pagination-bullets {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 16px;
+
+                .swiper-pagination-bullet {
+                    border-radius: 50%;
+                    background-color: var(--color-gray-200);
+                    width: 16px;
+                    height: 16px;
+                    opacity: 1;
+                    transition: all 0.3s ease;
+
+                    &.swiper-pagination-bullet-active {
+                        border-radius: 24px;
+                        background-color: var(--color-primary);
+                        width: 40px;
+                        height: 16px;
+                    }
+                }
+            }
+
+            .navigation {
+                display: flex;
+                align-items: center;
+                gap: 24px;
+            }
+        }
+    }
+}
+
+
+
+.swiper-button-prev,
+.swiper-button-next {
+    border-radius: 50%;
+    border: 1px solid var(--color-gray-300);
+    background: var(--background-color-primary);
+    top: auto !important;
+    bottom: 0;
+    width: 64px;
+    height: 64px;
+}
+
+.swiper-button-prev {
+    left: auto !important;
+    right: 0 !important;
+}
+
+.swiper-button-next {
+    right: 0 !important;
+}
+
+:is(.swiper-button-prev, .swiper-button-next) svg {
+    fill: var(--color-black);
+    color: var(--color-black);
+    width: 11px;
+    height: 22px;
+    stroke-width: 1px;
+    stroke: currentColor;
+    stroke-linejoin: round;
+}
+
+.swiper-button-prev.swiper-button-disabled {
+    border: none;
+    background: var(--color-gray-100);
+}

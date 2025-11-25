@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import styles from './globalnav.module.scss';
-import Link from 'next/link';
-import ButtonJoin from '../buttons/buttonGlobalnavJoin';
-import ButtonLogin from '../buttons/buttonGlobalnavLogin';
+import Link from 'next/link';       
+import ButtonGlobalnavJoin from '../buttons/buttonGlobalnavJoin';
+import ButtonGlobalnavLogin from '../buttons/buttonGlobalnavLogin';
 import ButtonGlobalnavLanguages from '../buttons/buttonGlobalnavLanguages';
 
 export default function Globalnav() {
@@ -17,7 +17,7 @@ export default function Globalnav() {
                     </h1>
                     <ul className={styles.nav}>
                         <li className={styles.item}>
-                            <Link href="/liverpool" className={styles.link}>
+                            <Link href="#" className={styles.link}>
                                 News
                             </Link>
                         </li>
@@ -51,10 +51,10 @@ export default function Globalnav() {
                 <div className={styles.utilities}>
                     <ul className={styles.list}>
                         <li className={styles.item}>
-                            <ButtonJoin />
+                            <ButtonGlobalnavJoin />
                         </li>
                         <li className={styles.item}>
-                            <ButtonLogin />
+                            <ButtonGlobalnavLogin />     
                         </li>
                         <li className={styles.item}>
                             <ButtonGlobalnavLanguages />

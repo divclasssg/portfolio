@@ -7,10 +7,11 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import Styles from "./swiperCentered.module.scss";
+import './swiperCentered.scss';
 
 import CardOverlay from "../cards/overlay/cardOverlay";
-import { useRef } from "react";
+import { useState } from "react";
+import SliderButtonArrow from "../icons/sliderButtonArrow";
 
 const FEATURED = [
     {
@@ -46,48 +47,59 @@ const FEATURED = [
 ];
 
 export default function SwiperCentered({ section }: { section: string }) {
-    const prevRef = useRef<HTMLButtonElement>(null);
-    const nextRef = useRef<HTMLButtonElement>(null);
-    const paginationRef = useRef<HTMLDivElement>(null);
+    const [prevEl, setPrevEl] = useState<HTMLButtonElement | null>(null);
+    const [nextEl, setNextEl] = useState<HTMLButtonElement | null>(null);
+    const [paginationEl, setPaginationEl] = useState<HTMLDivElement | null>(null);
+
+    const [isBeginning, setIsBeginning] = useState(true);
+    const [isEnd, setIsEnd] = useState(false);
 
     return (
-        <div className={Styles.container}>
+        <div className="swiper-centered">
             <Swiper
                 slidesPerView={"auto"}
                 spaceBetween={20}
                 centeredSlides={true}
                 modules={[Pagination, Navigation]}
                 pagination={{
-                    el: paginationRef.current,
+                    el: paginationEl,
                     clickable: true,
                 }}
                 navigation={{
-                    prevEl: prevRef.current,
-                    nextEl: nextRef.current,
+                    prevEl,
+                    nextEl,
                 }}
-                onBeforeInit={(swiper) => {
-                    // @ts-ignore (타입스크립트 사용 시 swiper.params.navigation 타입 문제 회피용)
-                    swiper.params.navigation.prevEl = prevRef.current;
-                    // @ts-ignore
-                    swiper.params.navigation.nextEl = nextRef.current;
-                    // @ts-ignore
-                    swiper.params.pagination.el = paginationRef.current;
+                onInit={(swiper) => {
+                    setIsBeginning(swiper.isBeginning);
+                    setIsEnd(swiper.isEnd);
+                }}
+                onSlideChange={(swiper) => {
+                    setIsBeginning(swiper.isBeginning);
+                    setIsEnd(swiper.isEnd);
                 }}
             >
                 {section === "featured"
                     ? FEATURED.map((item, index) => (
-                          <SwiperSlide key={index}>
-                              <CardOverlay section="featured" item={item} />
-                          </SwiperSlide>
-                      ))
+                        <SwiperSlide key={index}>
+                            <CardOverlay section="featured" item={item} />
+                        </SwiperSlide>
+                    ))
                     : null}
             </Swiper>
-            <div className={Styles.indicatorContainer}>
-                <div className={Styles.controller}>
-                    <div ref={paginationRef}></div>
-                    <div>
-                        <button ref={prevRef}>prev</button>
-                        <button ref={nextRef}>next</button>
+            <div className="indicator-container">
+                <div className="controller">
+                    <div ref={setPaginationEl}>
+                        {section === "featured" ? FEATURED.map((_, index) => (
+                            <span key={index}>{index + 1}</span>
+                        )) : null}
+                    </div>
+                    <div className="navigation">
+                        <button ref={setPrevEl}>
+                            <SliderButtonArrow size="large" active={!isBeginning} direction="left" />
+                        </button>
+                        <button ref={setNextEl}>
+                            <SliderButtonArrow size="large" active={!isEnd} direction="right" />
+                        </button>
                     </div>
                 </div>
             </div>
