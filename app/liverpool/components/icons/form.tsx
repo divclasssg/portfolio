@@ -1,5 +1,5 @@
-export default function Form({ state }: { state: string }) {
-    if (state === "win") {
+export default function Form({ state }: { state: number }) {
+    if (state === 1) {
         return (
             <svg
                 width="18"
@@ -31,7 +31,7 @@ export default function Form({ state }: { state: string }) {
         );
     }
 
-    if (state === "draw") {
+    if (state === 2) {
         return (
             <svg
                 width="18"
@@ -54,7 +54,7 @@ export default function Form({ state }: { state: string }) {
         );
     }
 
-    if (state === "defeat") {
+    if (state === 3) {
         return (
             <svg
                 width="18"

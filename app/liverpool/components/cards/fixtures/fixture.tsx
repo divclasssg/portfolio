@@ -3,7 +3,7 @@ import Buttons from "../../buttons/buttons";
 import styles from "./fixture.module.scss";
 
 export default function CardFixture({ data }: { data: any }) {
-    console.log(data);
+    
     return data.map((item: any) => {
         return (
             <div

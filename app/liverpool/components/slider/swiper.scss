@@ -63,6 +63,16 @@
             object-fit: cover;
         }
     }
+
+    &.standings {
+        width: 100%;
+
+        .swiper-slide {
+            background: transparent;
+            width: 175px !important;
+            height: 184px !important;
+        }
+    }
 }
 
 .indicator-container {
@@ -103,5 +113,9 @@
             align-items: center;
             gap: 24px;
         }
+    }
+
+    &.standings {
+        max-width: 1440px;
     }
 }

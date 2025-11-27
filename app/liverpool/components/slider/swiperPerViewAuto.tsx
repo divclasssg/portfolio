@@ -254,8 +254,9 @@ export default function SwiperPerViewAuto({ section }: { section: string }) {
         <div className={`swiper-per-view-auto ${section}`}>
             <Swiper
                 slidesPerView={"auto"}
-                spaceBetween={20}
+                spaceBetween={section === "standings" ? 8 : 20}
                 // centeredSlides={true}
+                initialSlide={section === "standings" ? 11 : 0}
                 modules={[Pagination, Navigation]}
                 pagination={{
                     el: paginationEl,

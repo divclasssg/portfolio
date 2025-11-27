@@ -19,7 +19,7 @@ export default function CardOverlay({
     if (size === "large") {
         return (
             <div className={`${styles.container} ${sizeClass}`}>
-                <Link href="#" className={styles.link}></Link>
+                <Link href="#" title={item.title} className={styles.link}></Link>
                 <div className={styles.image}>
                     <Image src={item.image} alt="" width={1260} height={780} />
                 </div>
@@ -37,7 +37,7 @@ export default function CardOverlay({
     if (size === "medium") {
         return (
             <div className={`${styles.container} ${sizeClass}`}>
-                <Link href="#" className={styles.link}></Link>
+                <Link href="#" title={item.title} className={styles.link}></Link>
                 <div className={styles.image}>
                     <Image src={item.image} alt="" width={940} height={582} />
                 </div>
@@ -55,7 +55,7 @@ export default function CardOverlay({
     if (size === "small") {
         return (
             <div className={`${styles.container} ${sizeClass}`}>
-                <Link href="#" className={styles.link}></Link>
+                <Link href="#" title={item.title} className={styles.link}></Link>
                 <div className={styles.image}>
                     <Image src={item.image} alt="" width={513} height={582} />
                 </div>
