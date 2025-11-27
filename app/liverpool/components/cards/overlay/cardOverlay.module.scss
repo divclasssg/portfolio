@@ -1,9 +1,46 @@
 .container {
     border-radius: var(--border-radius-default);
     position: relative;
-    width: 1260px;
-    height: 780px;
     overflow: hidden;
+
+    &.large {
+        width: 1260px;
+        height: 780px;
+
+        .content {
+            padding: 0 128px 64px 64px;
+
+            .title {
+                margin-bottom: 48px;
+            }
+        }
+    }
+
+    &.medium {
+        width: 940px;
+        height: 582px;
+
+        .content {
+            padding: 0 128px 48px 64px;
+
+            .title {
+                margin-bottom: 28px;
+            }
+        }
+    }
+
+    &.small {
+        width: 513px;
+        height: 582px;
+
+        .content {
+            padding: 48px;
+
+            .title {
+                margin-bottom: 28px;
+            }
+        }
+    }
 
     &:hover {
         .image {
@@ -64,7 +101,7 @@
                 size: var(--font-caption1-size);
                 weight: var(--font-caption1-weight);
                 line-height: var(--font-caption1-line-height);
-            };
+            }
         }
     }
 }

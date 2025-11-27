@@ -1,9 +1,9 @@
-import Image from 'next/image';
-import styles from './globalnav.module.scss';
-import Link from 'next/link';       
-import ButtonGlobalnavJoin from '../buttons/buttonGlobalnavJoin';
-import ButtonGlobalnavLogin from '../buttons/buttonGlobalnavLogin';
-import ButtonGlobalnavLanguages from '../buttons/buttonGlobalnavLanguages';
+import Image from "next/image";
+import styles from "./globalnav.module.scss";
+import Link from "next/link";
+import ButtonGlobalnavJoin from "../buttons/buttonGlobalnavJoin";
+import ButtonGlobalnavLogin from "../buttons/buttonGlobalnavLogin";
+import ButtonGlobalnavLanguages from "../buttons/buttonGlobalnavLanguages";
 
 export default function Globalnav() {
     return (
@@ -12,7 +12,12 @@ export default function Globalnav() {
                 <div className={styles.list}>
                     <h1 className={styles.logo}>
                         <Link href="/liverpool">
-                            <Image src="https://github.com/divclasssg/images/blob/main/bls/lfc/logo_clubs_large/liverpool.png?raw=true" alt="Liverpool FC" width={27} height={50} />
+                            <Image
+                                src="https://github.com/divclasssg/images/blob/main/bls/lfc/logo_clubs_large/liverpool.png?raw=true"
+                                alt="Liverpool FC"
+                                width={27}
+                                height={50}
+                            />
                         </Link>
                     </h1>
                     <ul className={styles.nav}>
@@ -54,19 +59,24 @@ export default function Globalnav() {
                             <ButtonGlobalnavJoin />
                         </li>
                         <li className={styles.item}>
-                            <ButtonGlobalnavLogin />     
+                            <ButtonGlobalnavLogin />
                         </li>
                         <li className={styles.item}>
                             <ButtonGlobalnavLanguages />
                         </li>
                         <li className={styles.item}>
                             <Link href="#" className={styles.partner}>
-                                <Image src="https://raw.githubusercontent.com/divclasssg/images/9bbe2474f68fcaea6cffa697ff81590620477c89/bls/lfc/icons/main_partner/logo-standard-chartered-black.svg" alt="Standard Chartered" width={81} height={32} />
+                                <Image
+                                    src="https://raw.githubusercontent.com/divclasssg/images/9bbe2474f68fcaea6cffa697ff81590620477c89/bls/lfc/icons/main_partner/logo-standard-chartered-black.svg"
+                                    alt="Standard Chartered"
+                                    width={81}
+                                    height={32}
+                                />
                             </Link>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-    )
+    );
 }

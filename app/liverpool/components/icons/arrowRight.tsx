@@ -1,77 +1,69 @@
 export default function ArrowRight({
+    type,
     size,
     color,
 }: {
-    size: string;
-    color: string;
+    type: "fill" | "border" | "text";
+    size: "small" | "medium" | "large" | "xlarge";
+    color: "black" | "red" | "yellow" | "white";
 }) {
-    let iconSize = 40;
-    switch (size) {
-        case "small":
-            iconSize = 12;
-            break;
-        case "medium":
-            iconSize = 16;
-            break;
-        case "large":
-            iconSize = 32;
-            break;
-        case "xlarge":
-            iconSize = 40;
-            break;
-        default:
-            iconSize = 40;
-            break;
-    }
+    const iconSize =
+        {
+            small: 12,
+            medium: type !== "text" ? 12 : 16,
+            large: type !== "text" ? 16 : 32,
+            xlarge: 40,
+        }[size] || 40;
 
-    let strokeColor = "#1D1D1F";
-    switch (color) {
-        case "black":
-            strokeColor = "#1D1D1F"; 
-            break;
-        case "red":
-            strokeColor = "#E31B22";
-            break;
-        case "yellow":
-            strokeColor = "#FFD900";
-            break;
-        case "white":
-            strokeColor = "#FFFFFF";
-            break;
-        default:
-            strokeColor = "#1D1D1F";
-            break;
-    }
+    const strokeColor =
+        {
+            black: "#1D1D1F",
+            red: "#E31B22",
+            yellow: "#FFD900",
+            white: "#FFFFFF",
+        }[color] || "#1D1D1F";
 
-    if (iconSize === 40) {
-        return (
-            <svg width={iconSize} height={iconSize} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15.75 11.5L24.25 20L15.75 28.5" stroke={strokeColor} stroke-width="2" stroke-linecap="round"/>
-            </svg>
-        )
-    }
+    const svgConfig = {
+        40: {
+            viewBox: "0 0 40 40",
+            d: "M15.75 11.5L24.25 20L15.75 28.5",
+            strokeWidth: "2",
+        },
+        32: {
+            viewBox: "0 0 32 32",
+            d: "M11.75 7.5L20.25 16L11.75 24.5",
+            strokeWidth: "2",
+        },
+        16: {
+            viewBox: "0 0 16 16",
+            d: "M5.75 3.5L10.25 8L5.75 12.5",
+            strokeWidth: undefined,
+        },
+        12: {
+            viewBox: "0 0 12 12",
+            d: "M4.5 3L7.5 6L4.5 9",
+            strokeWidth: undefined,
+        },
+    }[iconSize as 40 | 32 | 16 | 12] || {
+        viewBox: "0 0 40 40",
+        d: "M15.75 11.5L24.25 20L15.75 28.5",
+        strokeWidth: "2",
+    };
 
-    if (iconSize === 32) { 
-        return (
-            <svg width={iconSize} height={iconSize} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11.75 7.5L20.25 16L11.75 24.5" stroke={strokeColor} stroke-width="2" stroke-linecap="round"/>
-            </svg>
-        )
-    }
-
-    if (iconSize === 16) { 
-        return (
-            <svg width={iconSize} height={iconSize} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5.75 3.5L10.25 8L5.75 12.5" stroke={strokeColor} stroke-linecap="round"/>
-            </svg>
-        )
-    }
-
-    if (iconSize === 12) { 
-        return (
-            <svg width={iconSize} height={iconSize} viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4.5 3L7.5 6L4.5 9" stroke={strokeColor} stroke-linecap="round"/>
-            </svg>
-        )
-    }
+    return (
+        <svg
+            width={iconSize}
+            height={iconSize}
+            viewBox={svgConfig.viewBox}
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                d={svgConfig.d}
+                stroke={strokeColor}
+                strokeWidth={svgConfig.strokeWidth}
+                strokeLinecap="round"
+            />
+        </svg>
+    );
 }

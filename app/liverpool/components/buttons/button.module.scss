@@ -64,7 +64,7 @@
 }
 
 // button Text
-.text {
+.button {
     display: inline-flex;
     gap: 4px;
     align-items: center;
@@ -72,22 +72,114 @@
     font-weight: 700;
     line-height: 1em;
     text-transform: capitalize;
-    
 
-    &.xlarge {
-        font-size: 40px;
+    &.fill {
+        border-radius: var(--border-radius-default);
+
+        &.large {
+            height: 48px;
+            padding: 0 24px;
+        }
+        &.medium {
+            height: 40px;
+            padding: 0 20px;
+        }
+        &.small {
+            height: 24px;
+            padding: 0 12px;
+        }
+
+        &.bgRed {
+            background: var(--color-primary);
+            color: var(--font-color-white);
+        }
+
+        &.bgYellow {
+            background: var(--color-secondary);
+            color: var(--font-color-primary);
+        }
     }
-    
+
+    &.border {
+        border-radius: var(--border-radius-default);
+        border-width: 1px;
+        border-style: solid;
+
+        &.large {
+            height: 48px;
+            padding: 0 24px;
+        }
+        &.medium {
+            height: 40px;
+            padding: 0 20px;
+        }
+        &.small {
+            height: 24px;
+            padding: 0 12px;
+        }
+
+        &.bgRed {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        &.bgYellow {
+            border-color: var(--color-secondary);
+            color: var(--color-secondary);
+        }
+        &.bgBlack {
+            border-color: var(--color-black);
+            color: var(--color-black);
+        }
+        &.bgWhite {
+            border-color: var(--color-white);
+            color: var(--font-color-white);
+        }
+    }
+
     &.large {
-        font-size: 32px;
-    }
-    
-    &.medium {
         font-size: 16px;
     }
-    
+
+    &.medium {
+        font-size: 12px;
+    }
+
     &.small {
-        font-size: 14px;
+        font-size: 12px;
+    }
+
+    &.text {
+        &.xlarge {
+            font-size: 40px;
+        }
+
+        &.large {
+            font-size: 32px;
+        }
+
+        &.medium {
+            font-size: 16px;
+        }
+
+        &.small {
+            font-size: 14px;
+        }
+        &.textWhite {
+            color: var(--font-color-white);
+        }
+
+        &.textBlack {
+            color: var(--font-color-primary);
+        }
+
+        &.textRed {
+            color: var(--color-primary);
+        }
+
+        &.textYellow {
+            color: var(--color-secondary);
+        }
     }
 
     svg {
@@ -100,5 +192,3 @@
         }
     }
 }
-
-

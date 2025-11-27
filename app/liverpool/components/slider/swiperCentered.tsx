@@ -7,13 +7,13 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import './swiperCentered.scss';
+import "./swiper.scss";
 
 import CardOverlay from "../cards/overlay/cardOverlay";
 import { useState } from "react";
 import SliderButtonArrow from "../icons/sliderButtonArrow";
 
-const FEATURED = [
+const FEATURED_DATA = [
     {
         image: "https://github.com/divclasssg/images/blob/main/bls/lfc/featured_example_images/featured%20example%20images%2001.jpg?raw=true",
         category: "Match report",
@@ -49,7 +49,9 @@ const FEATURED = [
 export default function SwiperCentered({ section }: { section: string }) {
     const [prevEl, setPrevEl] = useState<HTMLButtonElement | null>(null);
     const [nextEl, setNextEl] = useState<HTMLButtonElement | null>(null);
-    const [paginationEl, setPaginationEl] = useState<HTMLDivElement | null>(null);
+    const [paginationEl, setPaginationEl] = useState<HTMLDivElement | null>(
+        null
+    );
 
     const [isBeginning, setIsBeginning] = useState(true);
     const [isEnd, setIsEnd] = useState(false);
@@ -79,26 +81,36 @@ export default function SwiperCentered({ section }: { section: string }) {
                 }}
             >
                 {section === "featured"
-                    ? FEATURED.map((item, index) => (
-                        <SwiperSlide key={index}>
-                            <CardOverlay section="featured" item={item} />
-                        </SwiperSlide>
-                    ))
+                    ? FEATURED_DATA.map((item, index) => (
+                          <SwiperSlide key={index} className="large">
+                              <CardOverlay size="large" item={item} />
+                          </SwiperSlide>
+                      ))
                     : null}
             </Swiper>
             <div className="indicator-container">
                 <div className="controller">
                     <div ref={setPaginationEl}>
-                        {section === "featured" ? FEATURED.map((_, index) => (
-                            <span key={index}>{index + 1}</span>
-                        )) : null}
+                        {section === "featured"
+                            ? FEATURED_DATA.map((_, index) => (
+                                  <span key={index}>{index + 1}</span>
+                              ))
+                            : null}
                     </div>
                     <div className="navigation">
                         <button ref={setPrevEl}>
-                            <SliderButtonArrow size="large" active={!isBeginning} direction="left" />
+                            <SliderButtonArrow
+                                size="large"
+                                active={!isBeginning}
+                                direction="left"
+                            />
                         </button>
                         <button ref={setNextEl}>
-                            <SliderButtonArrow size="large" active={!isEnd} direction="right" />
+                            <SliderButtonArrow
+                                size="large"
+                                active={!isEnd}
+                                direction="right"
+                            />
                         </button>
                     </div>
                 </div>

@@ -1,0 +1,13 @@
+.container {
+    background: var(--background-color-secondary);
+
+    .content {
+        max-width: 1440px;
+        margin: 0 auto;
+
+        .fixtures {
+            display: flex;
+            gap: 20px;
+        }
+    }
+}

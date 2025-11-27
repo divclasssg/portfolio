@@ -1,0 +1,107 @@
+.swiper-centered {
+    .swiper {
+        width: 100%;
+
+        .swiper-slide {
+            border-radius: var(--border-radius-default);
+            text-align: center;
+            font-size: 18px;
+            background: #444;
+
+            /* Center slide text vertically */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 1260px !important;
+            height: 780px !important;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.swiper-per-view-auto {
+    width: 1260px;
+    margin: 0 auto;
+
+    .swiper {
+        width: 100%;
+        overflow: visible;
+
+        .swiper-slide {
+            border-radius: var(--border-radius-default);
+            text-align: center;
+            font-size: 18px;
+            background: #444;
+
+            /* Center slide text vertically */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &.medium {
+                width: 940px !important;
+                height: 582px !important;
+            }
+
+            &.small {
+                width: 513px !important;
+                height: 582px !important;
+            }
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.indicator-container {
+    max-width: 1260px;
+    margin: 0 auto;
+    padding-top: 24px;
+
+    .controller {
+        display: flex;
+        align-items: center;
+        gap: 48px;
+
+        .swiper-pagination-bullets {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 16px;
+
+            .swiper-pagination-bullet {
+                border-radius: 50%;
+                background-color: var(--color-gray-200);
+                width: 16px;
+                height: 16px;
+                opacity: 1;
+                transition: all 0.3s ease;
+
+                &.swiper-pagination-bullet-active {
+                    border-radius: 24px;
+                    background-color: var(--color-primary);
+                    width: 40px;
+                    height: 16px;
+                }
+            }
+        }
+
+        .navigation {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+    }
+}
