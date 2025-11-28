@@ -10,6 +10,7 @@ import "swiper/css/navigation";
 import "./swiper.scss";
 
 import CardOverlay from "../cards/overlay/cardOverlay";
+import CardPlayers from "../cards/players/players";
 import { useState } from "react";
 import SliderButtonArrow from "../icons/sliderButtonArrow";
 
@@ -46,6 +47,121 @@ const FEATURED_DATA = [
     },
 ];
 
+const PLAYERS_DATA = [
+    {
+        id: "g1",
+        image: "https://github.com/divclasssg/images/blob/main/bls/lfc/card_players_images/1920-becker-player-image.png?raw=true",
+        backnumber: 1,
+        backnumberImage:
+            "https://github.com/divclasssg/images/blob/main/bls/lfc/card_players_number_1920/card-player-number-01.png?raw=true",
+        firstname: "Alisson",
+        lastname: "Becker",
+        position: "goalkeeper",
+        stats: [
+            {
+                name: "Appearances",
+                stat: 9,
+            },
+            {
+                name: "Minutes Played",
+                stat: 776,
+            },
+            {
+                name: "Clean Sheets",
+                stat: 2,
+            },
+            {
+                name: "Saves Made",
+                stat: 16,
+            },
+        ],
+    },
+    {
+        id: "g2",
+        image: "https://github.com/divclasssg/images/blob/main/bls/lfc/card_players_images/1920-Giorgi%20Mamardashvili-player-image.png?raw=true",
+        backnumber: 25,
+        backnumberImage:
+            "https://github.com/divclasssg/images/blob/main/bls/lfc/card_players_number_1920/card-player-number-25.png?raw=true",
+        firstname: "Giorgi",
+        lastname: "Mamardashvili",
+        position: "goalkeeper",
+        stats: [
+            {
+                name: "Appearances",
+                stat: 9,
+            },
+            {
+                name: "Minutes Played",
+                stat: 754,
+            },
+            {
+                name: "Clean Sheets",
+                stat: 4,
+            },
+            {
+                name: "Saves Made",
+                stat: 21,
+            },
+        ],
+    },
+    {
+        id: "g3",
+        image: "https://github.com/divclasssg/images/blob/main/bls/lfc/card_players_images/1920-Freddie%20Woodman-player-image.png?raw=true",
+        backnumber: 28,
+        backnumberImage:
+            "https://github.com/divclasssg/images/blob/main/bls/lfc/card_players_number_1920/card-player-number-28.png?raw=true",
+        firstname: "Freddie",
+        lastname: "Woodman",
+        position: "goalkeeper",
+        stats: [
+            {
+                name: "Appearances",
+                stat: 1,
+            },
+            {
+                name: "Minutes Played",
+                stat: 90,
+            },
+            {
+                name: "Clean Sheets",
+                stat: 0,
+            },
+            {
+                name: "Saves Made",
+                stat: 6,
+            },
+        ],
+    },
+    {
+        id: "g4",
+        image: "https://github.com/divclasssg/images/blob/main/bls/lfc/card_players_images/1920-Armin%20Pecsi-player-image.png?raw=true",
+        backnumber: 41,
+        backnumberImage:
+            "https://github.com/divclasssg/images/blob/main/bls/lfc/card_players_number_1920/card-player-number-41.png?raw=true",
+        firstname: "Armin",
+        lastname: "Pecsi",
+        position: "goalkeeper",
+        stats: [
+            {
+                name: "Appearances",
+                stat: 0,
+            },
+            {
+                name: "Minutes Played",
+                stat: 0,
+            },
+            {
+                name: "Clean Sheets",
+                stat: 0,
+            },
+            {
+                name: "Saves Made",
+                stat: 0,
+            },
+        ],
+    },
+];
+
 export default function SwiperCentered({ section }: { section: string }) {
     const [prevEl, setPrevEl] = useState<HTMLButtonElement | null>(null);
     const [nextEl, setNextEl] = useState<HTMLButtonElement | null>(null);
@@ -57,7 +173,7 @@ export default function SwiperCentered({ section }: { section: string }) {
     const [isEnd, setIsEnd] = useState(false);
 
     return (
-        <div className="swiper-centered">
+        <div className={`swiper-centered ${section}`}>
             <Swiper
                 slidesPerView={"auto"}
                 spaceBetween={20}
@@ -87,12 +203,25 @@ export default function SwiperCentered({ section }: { section: string }) {
                           </SwiperSlide>
                       ))
                     : null}
+
+                {section === "players"
+                    ? PLAYERS_DATA.map((item) => (
+                          <SwiperSlide key={item.id} className="large">
+                              <CardPlayers size="large" item={item} />
+                          </SwiperSlide>
+                      ))
+                    : null}
             </Swiper>
             <div className="indicator-container">
                 <div className="controller">
                     <div ref={setPaginationEl}>
                         {section === "featured"
                             ? FEATURED_DATA.map((_, index) => (
+                                  <span key={index}>{index + 1}</span>
+                              ))
+                            : null}
+                        {section === "players"
+                            ? PLAYERS_DATA.map((_, index) => (
                                   <span key={index}>{index + 1}</span>
                               ))
                             : null}

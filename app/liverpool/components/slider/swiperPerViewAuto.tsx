@@ -13,6 +13,7 @@ import "./swiper.scss";
 import SliderButtonArrow from "../icons/sliderButtonArrow";
 import CardOverlay from "../cards/overlay/cardOverlay";
 import CardStandings from "../cards/standings/standings";
+import CardTrophies from "../cards/trophies/trophies";
 
 interface LatestDataItem {
     id: string;
@@ -240,6 +241,106 @@ const STANDINGS_DATA = [
     },
 ];
 
+const TROPHIES_DATA = [
+    {
+        id: "LeagueTitle",
+        image: "https://raw.githubusercontent.com/divclasssg/images/31b93daa87e490afe375cff7e9a5d23908d4949b/bls/lfc/trophies_large/league_title.svg",
+        title: "League Title",
+        number: 20,
+        years: [
+            "1900 - 01",
+            "1905 - 06",
+            "1921 - 22",
+            "1922 - 23",
+            "1946 - 47",
+            "1963 - 64",
+            "1965 - 66",
+            "1972 - 73",
+            "1975 - 76",
+            "1976 - 77",
+            "1978 - 79",
+            "1979 - 80",
+            "1981 - 82",
+            "1982 - 83",
+            "1983 - 84",
+            "1985 - 86",
+            "1987 - 88",
+            "1989 - 90",
+            "2019 - 20",
+            "2024 - 25",
+        ],
+    },
+    {
+        id: "EuropeanCup",
+        image: "https://raw.githubusercontent.com/divclasssg/images/31b93daa87e490afe375cff7e9a5d23908d4949b/bls/lfc/trophies_large/european_cup.svg",
+        title: "European Cup",
+        number: 6,
+        years: [
+            "1976 - 77",
+            "1977 - 78",
+            "1980 - 81",
+            "1983 - 84",
+            "2004 - 05",
+            "2018 - 19",
+        ],
+    },
+    {
+        id: "FACup",
+        image: "https://raw.githubusercontent.com/divclasssg/images/31b93daa87e490afe375cff7e9a5d23908d4949b/bls/lfc/trophies_large/fa_cup.svg",
+        title: "FA Cup",
+        number: 8,
+        years: [
+            "1964 - 65",
+            "1973 - 74",
+            "1985 - 86",
+            "1988 - 89",
+            "1991 - 92",
+            "2000 - 01",
+            "2005 - 06",
+            "2021 - 22",
+        ],
+    },
+    {
+        id: "UEFACup",
+        image: "https://raw.githubusercontent.com/divclasssg/images/31b93daa87e490afe375cff7e9a5d23908d4949b/bls/lfc/trophies_large/uefa_cup.svg",
+        title: "UEFA Cup",
+        number: 3,
+        years: ["1972 - 73", "1975 - 76", "2000 - 01"],
+    },
+    {
+        id: "LeagueCup",
+        image: "https://raw.githubusercontent.com/divclasssg/images/31b93daa87e490afe375cff7e9a5d23908d4949b/bls/lfc/trophies_large/league_cup.svg",
+        title: "League Cup",
+        number: 10,
+        years: [
+            "1980 - 81",
+            "1981 - 82",
+            "1982 - 83",
+            "1983 - 84",
+            "1994 - 95",
+            "2000 - 01",
+            "2002 - 03",
+            "2011 - 12",
+            "2021 - 22",
+            "2023 - 24",
+        ],
+    },
+    {
+        id: "UEFASuperCup",
+        image: "https://raw.githubusercontent.com/divclasssg/images/31b93daa87e490afe375cff7e9a5d23908d4949b/bls/lfc/trophies_large/uefa_super_cup.svg",
+        title: "UEFA Super Cup",
+        number: 4,
+        years: ["1977", "2001", "2005", "2019"],
+    },
+    {
+        id: "FIFAClubWorldCup",
+        image: "https://raw.githubusercontent.com/divclasssg/images/31b93daa87e490afe375cff7e9a5d23908d4949b/bls/lfc/trophies_large/fifa_club_world_cup.svg",
+        title: "FIFA Club World Cup",
+        number: 1,
+        years: ["2019"],
+    },
+];
+
 export default function SwiperPerViewAuto({ section }: { section: string }) {
     const [prevEl, setPrevEl] = useState<HTMLButtonElement | null>(null);
     const [nextEl, setNextEl] = useState<HTMLButtonElement | null>(null);
@@ -287,6 +388,14 @@ export default function SwiperPerViewAuto({ section }: { section: string }) {
                     ? STANDINGS_DATA.map((item) => (
                           <SwiperSlide key={item.id}>
                               <CardStandings item={item} />
+                          </SwiperSlide>
+                      ))
+                    : null}
+
+                {section === "trophies"
+                    ? TROPHIES_DATA.map((item) => (
+                          <SwiperSlide key={item.id}>
+                              <CardTrophies item={item} />
                           </SwiperSlide>
                       ))
                     : null}

@@ -1,0 +1,166 @@
+.container {
+    border-radius: var(--border-radius-default);
+    overflow: hidden;
+
+    &.large {
+        width: 1260px;
+        height: 714px;
+
+        .imageContainer {
+            position: relative;
+            height: 50%;
+
+            .image {
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: 50% 50%;
+                width: 100%;
+                height: 100%;
+            }
+
+            .content {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                padding: 64px 64px 0;
+
+                .backnumber {
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: 50% 50%;
+                    width: 200px;
+                    height: 160px;
+                    margin-bottom: 88px;
+                    filter: brightness(1.5);
+                }
+
+                .firstname {
+                    font-size: 64px;
+                    font-weight: 700;
+                    line-height: 37px;
+                    color: var(--color-primary);
+                    text-align: left;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        .info {
+            position: relative;
+            height: 50%;
+            background: linear-gradient(
+                95deg,
+                var(--color-primary, #e31b22) 0%,
+                #801114 100%
+            );
+            display: flex;
+            flex-direction: column;
+            padding: 0 64px 64px;
+
+            .logo {
+                background: url(../../../../../public/logo-liverpool.svg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: 50% 50%;
+                position: absolute;
+                bottom: 64px;
+                right: 64px;
+                width: 140px;
+                height: 255px;
+                aspect-ratio: 28 / 51;
+                z-index: 1;
+            }
+
+            .name {
+                display: flex;
+                align-items: flex-end;
+                gap: 12px;
+                height: 90px;
+                transform: translate3d(-9px, 0, 0);
+
+                .lastname {
+                    font-size: 128px;
+                    font-weight: 700;
+                    line-height: 77px;
+                    color: var(--font-color-white);
+                    text-align: left;
+                    text-transform: uppercase;
+                    leading-trim: both;
+                    text-edge: cap;
+
+                    &.Mamardashvili {
+                        font-size: 96px;
+                    }
+                }
+
+                .position {
+                    font-size: 24px;
+                    font-weight: 700;
+                    line-height: 15px;
+                    color: var(--font-color-white);
+                    text-align: left;
+                    text-transform: uppercase;
+                    leading-trim: both;
+                    text-edge: cap;
+                }
+            }
+
+            .stats {
+                padding-top: 32px;
+
+                .title {
+                    font-size: 24px;
+                    font-weight: 700;
+                    line-height: 1em;
+                    color: var(--font-color-white);
+                    text-align: left;
+                    text-transform: uppercase;
+                    padding-bottom: 12px;
+                }
+
+                .list {
+                    display: flex;
+                    gap: 24px;
+
+                    .item {
+                        display: flex;
+                        gap: 4px;
+                        font-size: 24px;
+                        line-height: 1em;
+                        color: var(--font-color-white);
+                        text-align: left;
+                        text-transform: capitalize;
+
+                        .subtitle {
+                            font-weight: 400;
+                        }
+
+                        .stat {
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+
+            .links {
+                display: flex;
+                gap: 24px;
+                margin-top: auto;
+            }
+        }
+
+        &.Mamardashvili {
+            .info {
+                .name {
+                    height: 67px;
+
+                    .lastname {
+                        font-size: 96px;
+                        line-height: 58px;
+                    }
+                }
+            }
+        }
+    }
+}

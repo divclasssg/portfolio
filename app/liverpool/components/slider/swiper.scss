@@ -24,6 +24,12 @@
             object-fit: cover;
         }
     }
+
+    &.players {
+        .swiper-slide {
+            height: 714px !important;
+        }
+    }
 }
 
 .swiper-per-view-auto {
@@ -71,6 +77,16 @@
             background: transparent;
             width: 175px !important;
             height: 184px !important;
+        }
+    }
+
+    &.trophies {
+        width: 100%;
+
+        .swiper-slide {
+            background: transparent;
+            width: 407px !important;
+            height: 407px !important;
         }
     }
 }

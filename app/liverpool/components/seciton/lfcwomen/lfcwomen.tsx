@@ -1,4 +1,5 @@
 import CardStandard from "../../cards/standard/cardStandard";
+import H2 from "../../headings/h2";
 import styles from "./lfcwomen.module.scss";
 
 const LFC_WOMEN_DATA = [
@@ -25,18 +26,22 @@ const LFC_WOMEN_DATA = [
     },
 ];
 
-export default function SectionLFCWomen() { 
+export default function SectionLFCWomen() {
     return (
         <section className={styles.container}>
             <div className={styles.content}>
+                <H2
+                    title="lfc women"
+                    button={true}
+                    buttonLabel="view More"
+                    tab={false}
+                />
                 <div className={styles.list}>
-                    { 
-                        LFC_WOMEN_DATA.map((item) => (
-                            <CardStandard key={item.id} item={item} />
-                        ))
-                    }
+                    {LFC_WOMEN_DATA.map((item) => (
+                        <CardStandard key={item.id} item={item} />
+                    ))}
                 </div>
             </div>
         </section>
-    )
+    );
 }

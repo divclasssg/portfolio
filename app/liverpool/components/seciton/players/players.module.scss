@@ -1,0 +1,11 @@
+.container {
+    background: var(--background-color-primary);
+    padding: var(--layout-padding-top-and-bottom) 0;
+
+    .content {
+        .headline {
+            width: var(--layout-min-width);
+            margin: 0 auto;
+        }
+    }
+}

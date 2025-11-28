@@ -1,4 +1,5 @@
 import CardFixture from "../../cards/fixtures/fixture";
+import H2 from "../../headings/h2";
 import SwiperPerViewAuto from "../../slider/swiperPerViewAuto";
 import styles from "./fixturesAndStandings.module.scss";
 
@@ -22,7 +23,7 @@ const FIXTURES_DATA = [
         competition: "premier league",
         game: "home",
         schedule: "SUN 23 November, 00:00",
-        location: "Etihad Anfield",
+        location: "Anfield",
         opponent: "Nottm Forest",
         opponentLogo:
             "https://github.com/divclasssg/images/blob/main/bls/lfc/logo_clubs_large/nottm%20forest.png?raw=true",
@@ -61,6 +62,14 @@ export default function SectionFixturesAndStandings() {
     return (
         <section className={styles.container}>
             <div className={styles.content}>
+                <div className={styles.headline}>
+                    <H2
+                        title="fixtures & standings"
+                        button={false}
+                        buttonLabel=""
+                        tab={true}
+                    />
+                </div>
                 <div className={styles.fixtures}>
                     <CardFixture data={FIXTURES_DATA} />
                 </div>

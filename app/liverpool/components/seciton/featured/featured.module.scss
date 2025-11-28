@@ -1,0 +1,16 @@
+.container {
+    background: var(--background-color-primary);
+    padding: 48px 0 var(--layout-padding-top-and-bottom);
+
+    .content {
+        width: 100%;
+
+        .headline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: var(--layout-min-width);
+            margin: 0 auto;
+        }
+    }
+}

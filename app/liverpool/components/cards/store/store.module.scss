@@ -1,0 +1,69 @@
+.container {
+    border-radius: var(--border-radius-default);
+    position: relative;
+    max-width: 1260px;
+    height: 430px;
+    overflow: hidden;
+
+    .image {
+        background: url("https://github.com/divclasssg/images/blob/main/bls/lfc/store/image-store-main.jpg?raw=true")
+            no-repeat 50% 50% / cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    &.hovered {
+        .image {
+            transform: scale(1.02);
+        }
+    }
+
+    .link {
+        position: absolute;
+        bottom: 64px;
+        left: 64px;
+        display: inline-block;
+    }
+}
+
+.items {
+    border-radius: var(--border-radius-default);
+    position: relative;
+    width: 405px;
+    height: 507px;
+    overflow: hidden;
+
+    .image {
+        object-fit: cover;
+        transition: transform 0.3s ease-in-out;
+
+        &.hovered {
+            transform: scale(1.02);
+        }
+    }
+
+    .info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 0 48px 48px;
+
+        .title {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1em;
+            color: var(--font-color-white);
+            text-transform: capitalize;
+            padding-bottom: 12px;
+        }
+
+        .link {
+            display: inline-block;
+        }
+    }
+}

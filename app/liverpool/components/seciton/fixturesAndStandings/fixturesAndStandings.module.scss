@@ -1,5 +1,6 @@
 .container {
     background: var(--background-color-secondary);
+    padding: var(--layout-padding-top-and-bottom) 0;
 
     .content {
         max-width: 1440px;
@@ -8,10 +9,11 @@
         .fixtures {
             display: flex;
             gap: 20px;
+            padding-bottom: 48px;
         }
 
         .standings {
-            overflow: hidden;   
+            overflow: hidden;
         }
     }
 }

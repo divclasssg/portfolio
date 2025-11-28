@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    .headline {
+        font-size: var(--font-h2-size);
+        font-weight: var(--font-h2-weight);
+        line-height: var(--font-h2-line-height);
+        color: var(--font-color-black);
+        padding-bottom: var(--font-h2-padding-bottom);
+        text-transform: uppercase;
+    }
+
+    .link {
+        padding-bottom: var(--font-h2-padding-bottom);
+    }
+
+    &.tab {
+        .headline {
+            padding-bottom: 24px;
+        }
+
+        .link {
+            padding-bottom: 24px;
+        }
+    }
+}

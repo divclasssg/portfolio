@@ -146,6 +146,7 @@
     }
 
     &.small {
+        border-radius: var(--border-radius-small);
         font-size: 12px;
     }
 

@@ -3,12 +3,7 @@
     padding: var(--layout-padding-top-and-bottom) 0;
 
     .content {
-        width: 1260px;
+        max-width: 1260px;
         margin: 0 auto;
-
-        .list {
-            display: flex;
-            gap: 20px;
-        }
     }
 }
