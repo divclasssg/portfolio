@@ -88,6 +88,7 @@
                     text-transform: uppercase;
                     leading-trim: both;
                     text-edge: cap;
+                    transform: translate3d(0, -5px, 0);
 
                     &.Mamardashvili {
                         font-size: 96px;
@@ -125,8 +126,8 @@
 
                     .item {
                         display: flex;
-                        gap: 4px;
-                        font-size: 24px;
+                        gap: 8px;
+                        font-size: 20px;
                         line-height: 1em;
                         color: var(--font-color-white);
                         text-align: left;

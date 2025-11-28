@@ -60,7 +60,8 @@
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            gap: 8px;
+            column-gap: 8px;
+            row-gap: 4px;
 
             .item {
                 flex: 1 1 40%;
@@ -74,6 +75,14 @@
                 line-height: 1.4em;
                 color: var(--font-color-white);
                 text-align: center;
+
+                // &:nth-child(odd) {
+                //     justify-content: flex-end;
+                // }
+
+                // &:nth-child(even) {
+                    // justify-content: flex-start;
+                // }
             }
         }
     }

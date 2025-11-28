@@ -90,26 +90,30 @@ export default function CardFixture({ data }: { data: any }) {
                                 arrowColor="yellow"
                             />
                         </>
-                    ) : item.type === "upcoming" ? (
-                        <>
-                            <Buttons
-                                type="text"
-                                size="small"
-                                label="match centre"
-                                textColor="textBlack"
-                                bgColor="bgWhite"
-                                arrowColor="black"
-                            />
-                            <Buttons
-                                type="text"
-                                size="small"
-                                label="tickets availability"
-                                textColor="textBlack"
-                                bgColor="bgWhite"
-                                arrowColor="black"
-                            />
-                        </>
-                    ) : null}
+                        ) : item.type === "upcoming" ? (
+                                <>
+                                    <div className={styles.linkWrapper}>
+                                        <Buttons
+                                            type="text"
+                                            size="small"
+                                            label="match centre"
+                                            textColor="textBlack"
+                                            bgColor="bgWhite"
+                                            arrowColor="black"
+                                                />
+                                    </div>
+                                    <div className={styles.linkWrapper}>
+                                        <Buttons
+                                            type="text"
+                                            size="small"
+                                            label="tickets availability"
+                                            textColor="textBlack"
+                                            bgColor="bgWhite"
+                                            arrowColor="black"
+                                        />
+                                    </div>
+                                </>
+                            ) : null}
                 </div>
             </div>
         );
