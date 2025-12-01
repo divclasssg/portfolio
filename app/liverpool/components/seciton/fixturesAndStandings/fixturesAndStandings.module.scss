@@ -6,6 +6,22 @@
         max-width: 1440px;
         margin: 0 auto;
 
+        .subhead {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .links {
+                display: flex;
+                gap: 24px;
+                padding-bottom: var(--font-h3-padding-bottom);
+            }
+        }
+
+        .headline {
+            padding-bottom: 48px;
+        }
+
         .fixtures {
             display: flex;
             gap: 20px;
@@ -14,6 +30,12 @@
 
         .standings {
             overflow: hidden;
+
+            .subhead {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-bottom: 16px;
+            }
         }
     }
 }

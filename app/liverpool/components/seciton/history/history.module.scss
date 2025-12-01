@@ -5,5 +5,25 @@
     .content {
         max-width: 1260px;
         margin: 0 auto;
+
+        .memorial {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding-bottom: 48px;
+        }
+
+        .records {
+            padding-top: 64px;
+            .paragraph {
+                max-width: 960px;
+                font-size: var(--font-h3-size);
+                line-height: 140%;
+                font-weight: 400;
+                color: var(--text-color-primary);
+                margin-bottom: 24px;
+            }
+        }
     }
 }

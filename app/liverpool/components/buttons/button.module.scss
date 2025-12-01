@@ -193,3 +193,19 @@
         }
     }
 }
+
+.buttonAddFixturesToCalendar {
+    border-radius: var(--border-radius-default);
+    border: 1px solid var(--color-secondary);
+    background: var(--color-secondary);
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    font-weight: 700;
+    line-height: 1em;
+    color: var(--font-color-primary);
+    text-transform: capitalize;
+    padding: 0 12px;
+}

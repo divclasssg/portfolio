@@ -1,0 +1,16 @@
+.container {
+    background: var(--background-color-secondary);
+    padding: var(--layout-padding-top-and-bottom) 0;
+
+    .content {
+        max-width: 1260px;
+        margin: 0 auto;
+
+        .list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+}

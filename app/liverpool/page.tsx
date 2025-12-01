@@ -10,6 +10,10 @@ import SwiperPerViewAuto from "./components/slider/swiperPerViewAuto";
 import SectionStore from "./components/seciton/store/store";
 import SectionFeatured from "./components/seciton/featured/featured";
 import SectionHaveYouSeen from "./components/seciton/haveYouSeen/haveYouSeen";
+import SectionAdv1 from "./components/seciton/adv/adv1";
+import SectionAdv2 from "./components/seciton/adv/adv2";
+import SectionJoinAllRed from "./components/seciton/joinAllRed/joinAllRed";
+import SectionClubAndCommunity from "./components/seciton/clubAndCommunity/clubAndCommunity";
 
 export default function LiverpoolPage() {
     return (
@@ -18,13 +22,15 @@ export default function LiverpoolPage() {
             <main className="main">
                 <SectionFeatured />
                 <SectionFixturesAndStandings />
-                {/* adv 1 */}
+                <SectionAdv1 />
                 <SectionLFCWomen />
                 <SectionHaveYouSeen />
-                {/* adv 2 */}
+                <SectionAdv2 />
                 <SectionPlayers />
                 <SectionHistory />
                 <SectionStore />
+                <SectionJoinAllRed />
+                <SectionClubAndCommunity />
             </main>
         </>
     );

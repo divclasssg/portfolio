@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+
+    .button {
+        font-family: var(--font-family);
+    }
+
+    &.basic {
+        &.large {
+            gap: 12px;
+
+            .button {
+                border-radius: var(--border-radius-default);
+                border: 1px solid var(--color-gray-600);
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 100%;
+                color: var(--color-gray-600);
+                padding: 10px 20px;
+
+                &:hover,
+                &.active {
+                    border-color: var(--color-primary);
+                    color: var(--color-primary);
+                }
+            }
+        }
+    }
+
+    &.text {
+        &.large {
+            gap: 16px;
+
+            .button {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 100%;
+                color: var(--color-gray-600);
+                padding-bottom: 8px;
+
+                &:hover,
+                &.active {
+                    color: var(--color-primary);
+                }
+
+                &.active {
+                    border-bottom: 1px solid var(--color-primary);
+                }
+            }
+        }
+    }
+}

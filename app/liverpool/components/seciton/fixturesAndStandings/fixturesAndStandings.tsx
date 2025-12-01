@@ -2,6 +2,35 @@ import CardFixture from "../../cards/fixtures/fixture";
 import H2 from "../../headings/h2";
 import SwiperPerViewAuto from "../../slider/swiperPerViewAuto";
 import styles from "./fixturesAndStandings.module.scss";
+import Tab from "../../tabs/tab";
+import H3 from "../../headings/h3";
+import Buttons from "../../buttons/buttons";
+import Link from "next/link";
+import ButtonAddFixturesToCalendar from "../../buttons/buttonAddFixturesToCalendar";
+
+const TAB_DATA = [
+    {
+        label: "Mens",
+    },
+    {
+        label: "Womens",
+    },
+    {
+        label: "U21s",
+    },
+    {
+        label: "U18s",
+    },
+];
+
+const TAB_TEXT_DATA = [
+    {
+        label: "Premier League 2025-26",
+    },
+    {
+        label: "Champions League 2025-26",
+    },
+];
 
 const FIXTURES_DATA = [
     {
@@ -69,11 +98,30 @@ export default function SectionFixturesAndStandings() {
                         buttonLabel=""
                         tab={true}
                     />
+                    <Tab style="basic" size="large" item={TAB_DATA} />
+                </div>
+                <div className={styles.subhead}>
+                    <H3 text="FIXTURES" />
+                    <div className={styles.links}>
+                        <ButtonAddFixturesToCalendar />
+                        <Buttons
+                            type="text"
+                            size="medium"
+                            label="all fixtures"
+                            bgColor="bgWhite"
+                            textColor="textBlack"
+                            arrowColor="black"
+                        />
+                    </div>
                 </div>
                 <div className={styles.fixtures}>
                     <CardFixture data={FIXTURES_DATA} />
                 </div>
                 <div className={styles.standings}>
+                    <div className={styles.subhead}>
+                        <H3 text="STANDINGS" />
+                        <Tab style="text" size="large" item={TAB_TEXT_DATA} />
+                    </div>
                     <SwiperPerViewAuto section="standings" />
                 </div>
             </div>

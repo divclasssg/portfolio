@@ -1,0 +1,29 @@
+.container {
+    background: url("https://github.com/divclasssg/images/blob/main/bls/lfc/join_all_red/join_all_red-1920.jpg?raw=true")
+        no-repeat 50% 50% / cover;
+    display: flex;
+    align-items: center;
+    height: 700px;
+
+    .content {
+        width: 1260px;
+        margin: 0 auto;
+
+        .headline {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 120%;
+            color: var(--font-color-white);
+            padding-bottom: 24px;
+        }
+
+        .paragraph {
+            width: 960px;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 140%;
+            color: var(--font-color-white);
+            padding-bottom: 54px;
+        }
+    }
+}
