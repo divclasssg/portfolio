@@ -14,6 +14,7 @@ export default function CardStoreItems({ item }: { item: any }) {
                 src={item.image}
                 alt={item.title}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className={`${styles.image} ${isHovered ? styles.hovered : ""}`}
             />
             <div className={styles.info}>
