@@ -63,6 +63,7 @@ export default function ArrowRight({
                 stroke={strokeColor}
                 strokeWidth={svgConfig.strokeWidth}
                 strokeLinecap="round"
+                style={{ transition: "stroke 0.3s ease" }}
             />
         </svg>
     );
