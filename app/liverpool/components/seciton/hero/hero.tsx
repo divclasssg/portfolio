@@ -20,7 +20,7 @@ export default function SectionHero() {
                 ></video>
             </div>
             <div className={Styles.fixtures}>
-                <div className={Styles.fixturesItems}>
+                <div className={`${Styles.fixturesItems} ${Styles.joinAllRed}`}>
                     <div className={Styles.contents}>
                         <div className={Styles.details}>
                             <p className={Styles.paragraph}>
@@ -39,13 +39,13 @@ export default function SectionHero() {
                                 <span className={Styles.defaultText}>ALL RED Essentials</span>
                                 <span className={Styles.hoverText}>Join ALL RED Essentials</span>
                             </div>
-                            <ArrowRight type="border" size="large" color={hoverIndex === 0 ? "black" : "white"} />
+                            <ArrowRight type="border" size="large" color={hoverIndex === 0 ? "white" : "white"} />
                         </Link>
                     </div>
                 </div>
-                <div className={Styles.fixturesItems}>
+                <div className={`${Styles.fixturesItems} ${Styles.nextMatch}`}>
                     <div className={Styles.contents}>
-                        <div className={Styles.details}>
+                        <div className={`${Styles.details} ${Styles.nextMatch}`}>
                             <div className={Styles.badge}>Next Match</div>
                             <div className={Styles.competition}>Premier League</div>
                             <div className={Styles.info}>
@@ -66,11 +66,11 @@ export default function SectionHero() {
                                 <span className={Styles.defaultText}>Next Match</span>
                                 <span className={Styles.hoverText}>Tickets Availability</span>
                             </div>
-                            <ArrowRight type="border" size="large" color={hoverIndex === 1 ? "white" : "red"} />
+                            <ArrowRight type="border" size="large" color={hoverIndex === 1 ? "white" : "white"} />
                         </Link>
                     </div>
                 </div>
-                <div className={Styles.fixturesItems}>
+                <div className={`${Styles.fixturesItems} ${Styles.upcomingMatch}`}>
                     <div className={Styles.contents}>
                         <div className={Styles.details}>
                             <div className={Styles.badge}>Upcoming Match</div>
@@ -93,11 +93,11 @@ export default function SectionHero() {
                                 <span className={Styles.defaultText}>Upcoming Match</span>
                                 <span className={Styles.hoverText}>Tickets Availability</span>
                             </div>
-                            <ArrowRight type="border" size="large" color={hoverIndex === 2 ? "black" : "white"} />
+                            <ArrowRight type="border" size="large" color={hoverIndex === 2 ? "white" : "white"} />
                         </Link>
                     </div>
                 </div>
-                <div className={Styles.fixturesItems}>
+                <div className={`${Styles.fixturesItems} ${Styles.lfcStore}`}>
                     <div className={Styles.contents}>
                         <Link 
                             href="#" 
@@ -109,7 +109,7 @@ export default function SectionHero() {
                                 <span className={Styles.defaultText}>The LFC Store</span>
                                 <span className={Styles.hoverText}>Visit The LFC Store</span>
                             </div>
-                            <ArrowRight type="border" size="large" color={hoverIndex === 3 ? "black" : "white"} />
+                            <ArrowRight type="border" size="large" color={hoverIndex === 3 ? "white" : "white"} />
                         </Link>
                     </div>
                 </div>

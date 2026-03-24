@@ -43,6 +43,11 @@
             }
 
             .details {
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: var(--border-radius-default);
+                background: rgba(255, 255, 255, 0.4);
+                backdrop-filter: saturate(180%) blur(20px);
+                // -webkit-backdrop-filter: saturate(180%) blur(20px);
                 position: absolute;
                 bottom: calc(100% + (50px + 10px));
                 left: 5%;
@@ -50,12 +55,20 @@
                 flex-direction: column;
                 justify-content: center;
                 width: 90%;
+                min-height: 250px;
+                padding: 32px 24px;
                 box-sizing: border-box;
                 opacity: 0;
                 pointer-events: none;
                 transform: translateY(15px);
                 transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+                // color: var(--font-color-primary);
                 color: #fff;
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+
+                &.nextMatch {
+                    background: rgba(227, 27, 34, 0.15);
+                }
 
                 .paragraph {
                     font: {
@@ -138,8 +151,11 @@
             }
             
             .link {
+                border: 1px solid rgba(255, 255, 255, 0.1);
                 border-radius: var(--border-radius-default);
-                border: 1px solid #fff;
+                background: rgba(255, 255, 255, 0.4);
+                backdrop-filter: saturate(180%) blur(20px);
+                // -webkit-backdrop-filter: saturate(180%) blur(20px);
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -175,8 +191,8 @@
                 }
 
                 &:hover {
-                    background: #fff;
-                    color: var(--font-color-primary);
+                    // background: #fff;
+                    // color: var(--font-color-primary);
 
                     .textWrapper {
                         .defaultText {
@@ -192,9 +208,13 @@
                 }
 
                 &.nextMatch {
-                    border-width: 2px;
-                    border-color: var(--color-primary);
-                    color: var(--color-primary);
+                    // border: 1px solid rgba(255, 255, 255, 0.1);
+                    background: rgba(227, 27, 34, 0.15);
+                    backdrop-filter: saturate(180%) blur(20px);
+                    // -webkit-backdrop-filter: saturate(180%) blur(20px);
+                    // border-width: 2px;
+                    // border-color: var(--color-primary);                   
+                    color: #fff;
 
                     &:hover {
                         background: var(--color-primary);
