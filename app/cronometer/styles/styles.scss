@@ -1,0 +1,65 @@
+@use "root";
+
+.cronometer-stage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    min-height: 100vh;
+    background: var(--bg-app);
+    font-family: var(--font-sans);
+    color: var(--fg-primary);
+    -webkit-font-smoothing: antialiased;
+
+    .cronometer-screen {
+        width: 393px;
+        height: 852px;
+        background: var(--bg-app);
+        overflow: hidden;
+        position: relative;
+
+        ::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+    }
+}
+
+@keyframes cronometer-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes cronometer-fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes cronometer-slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes cronometer-popIn {
+    0% {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

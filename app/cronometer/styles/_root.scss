@@ -1,0 +1,60 @@
+:root {
+    --color-mandarin-500: #f17144;
+    --color-mandarin-300: rgba(243, 110, 64, 0.46);
+    --color-mandarin-50: #fff1ea;
+
+    --color-honey-yellow-500: #ffb12c;
+    --color-sky-blue-crayola-500: #5fc7d5;
+    --color-sky-blue-crayola-200: #a2ecf9;
+    --color-sky-blue-crayola-25: #dff3f7;
+    --color-emerald-500: #6fcd83;
+    --color-emerald-200: rgba(106, 203, 158, 0.42);
+    --color-emerald-25: #e4f4ec;
+    --color-bmr: #ae61c2;
+    --color-cyan-500: #00bfc6;
+
+    --color-blue-stone: #005c5c;
+    --color-deep-jungle-green: #005a5b;
+    --color-robins-egg-blue: #00bfc6;
+
+    --color-raisin-black-500: #272a3a;
+    --color-raisin-black-400: #474a57;
+    --color-raisin-black-300: #686a75;
+    --color-raisin-black-200: #888a93;
+    --color-raisin-black-100: #a9aab0;
+
+    --color-floral-white-500: #fafbff;
+    --color-floral-white-600: #f0f2fa;
+    --color-floral-white-700: #e6e8f0;
+    --color-floral-white-800: #c3c6d3;
+
+    --color-bg-ivory: #fffcf6;
+    --color-scrim: rgba(0, 0, 0, 0.45);
+
+    --color-protein: #14b255;
+    --color-warning: #cd0a01;
+    --color-success: #6fcd83;
+    --color-info: #5fc7d5;
+
+    --fg-strong: var(--color-raisin-black-400);
+    --fg-primary: var(--color-raisin-black-500);
+    --fg-secondary: var(--color-raisin-black-300);
+    --fg-muted: var(--color-raisin-black-200);
+    --fg-disabled: var(--color-raisin-black-100);
+    --fg-on-accent: #ffffff;
+    --fg-link: var(--color-robins-egg-blue);
+
+    --bg-app: var(--color-floral-white-500);
+    --bg-subtle: var(--color-floral-white-600);
+    --bg-card: #ffffff;
+    --bg-ivory: var(--color-bg-ivory);
+    --bg-disabled: var(--color-floral-white-800);
+
+    --border-subtle: var(--color-floral-white-700);
+
+    --accent: var(--color-mandarin-500);
+    --accent-on: #ffffff;
+
+    --font-sans: var(--font-manrope), "Work Sans", -apple-system,
+        BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+}

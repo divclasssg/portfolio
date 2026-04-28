@@ -1,0 +1,1638 @@
+/* ==========================================================
+   Cronometer Photo Log — component classes
+   Tokens / wrapper / keyframes live in styles/styles.scss
+   ========================================================== */
+
+/* ---------------- App root ---------------- */
+.app {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: var(--bg-app);
+}
+
+/* ---------------- PhotoLogHeader ---------------- */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    height: 48px;
+    flex-shrink: 0;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-subtle);
+
+    &.headerDark {
+        background: transparent;
+        border-bottom: none;
+    }
+}
+
+.headerCloseBtn {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerTitle {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--fg-primary);
+    letter-spacing: -0.2px;
+
+    .headerDark & {
+        color: #ffffff;
+    }
+}
+
+.headerRight {
+    width: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* ---------------- InfoBanner ---------------- */
+.banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 12px;
+    margin: 10px 16px;
+    border-radius: 10px;
+    font-size: 12px;
+    line-height: 1.4;
+
+    &.bannerInfo {
+        background: var(--color-sky-blue-crayola-25);
+        color: var(--color-deep-jungle-green);
+    }
+    &.bannerWarning {
+        background: var(--color-mandarin-50);
+        color: #8a3a14;
+    }
+    &.bannerDanger {
+        background: #fce7e1;
+        color: #8a1e07;
+    }
+}
+
+.bannerBody {
+    flex: 1;
+}
+
+.bannerDismiss {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    color: currentColor;
+    opacity: 0.6;
+}
+
+/* ---------------- Eyebrow ---------------- */
+.eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--fg-muted);
+}
+
+/* ---------------- PillButton ---------------- */
+.pill {
+    border: 0;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    border-radius: 999px;
+    padding: 12px 22px;
+    transition: transform 120ms, background 200ms, opacity 200ms;
+    width: auto;
+    opacity: 1;
+
+    &:active {
+        transform: scale(0.97);
+    }
+
+    &.pillFullWidth {
+        width: 100%;
+    }
+
+    &.pillOutline {
+        background: #ffffff;
+        color: var(--fg-primary);
+        border: 1.5px solid var(--fg-primary);
+    }
+    &.pillPrimary {
+        background: var(--accent);
+        color: var(--accent-on);
+    }
+    &.pillTeal {
+        background: var(--color-deep-jungle-green);
+        color: #ffffff;
+    }
+    &.pillDisabled {
+        background: var(--border-subtle);
+        color: var(--fg-disabled);
+        cursor: not-allowed;
+        opacity: 0.4;
+
+        &:active {
+            transform: none;
+        }
+    }
+    &.pillGhost {
+        background: transparent;
+        color: var(--color-deep-jungle-green);
+        border: 0;
+    }
+}
+
+/* ---------------- Checkbox ---------------- */
+.checkbox {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    border: 1.5px solid var(--bg-disabled);
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    transition: background 150ms, border-color 150ms;
+
+    &.checkboxChecked {
+        border-color: var(--accent);
+        background: var(--accent);
+    }
+}
+
+.checkboxIndeterminateMark {
+    width: 10px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 1px;
+}
+
+/* ---------------- ConfidenceBadge ---------------- */
+.confBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 7px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+
+    &.confBadgeHigh {
+        background: var(--color-emerald-25);
+        color: #1f7a36;
+    }
+    &.confBadgeMid {
+        background: #fff4e1;
+        color: #8a5a14;
+    }
+    &.confBadgeLow {
+        background: #fce7e1;
+        color: #8a1e07;
+    }
+}
+
+.confBadgeDot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+/* ---------------- IconButton ---------------- */
+.iconBtn {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cron-icon-color, var(--color-deep-jungle-green));
+    padding: 0;
+    flex-shrink: 0;
+}
+
+/* ---------------- EnergyDonut ---------------- */
+.donut {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.donutSvg {
+    transform: rotate(-90deg);
+}
+
+.donutLabel {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.donutKcal {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--fg-primary);
+    line-height: 1;
+}
+
+.donutUnit {
+    font-size: 9px;
+    color: var(--fg-muted);
+    margin-top: 2px;
+    font-weight: 600;
+}
+
+/* ---------------- Camera screen ---------------- */
+.cameraScreen {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #0d0d0d;
+}
+
+.cameraBannerOverlay {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    top: 60px;
+    z-index: 5;
+}
+
+.cameraBanner {
+    background: rgba(217, 238, 243, 0.96);
+    color: var(--color-deep-jungle-green);
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    line-height: 1.4;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.cameraBannerBody {
+    flex: 1;
+}
+
+.cameraBannerDismiss {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    color: var(--color-deep-jungle-green);
+}
+
+.cameraViewfinder {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background: url("/cronometer/foodPhoto.jpg") center/cover;
+}
+
+.cameraGrid {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    span {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.18);
+
+        &:nth-child(1) {
+            left: 33.3%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+        }
+        &:nth-child(2) {
+            left: 66.6%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+        }
+        &:nth-child(3) {
+            top: 33.3%;
+            left: 0;
+            right: 0;
+            height: 1px;
+        }
+        &:nth-child(4) {
+            top: 66.6%;
+            left: 0;
+            right: 0;
+            height: 1px;
+        }
+    }
+}
+
+.cameraFocus {
+    position: absolute;
+    inset: 30% 25%;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 6px;
+}
+
+.cameraControls {
+    height: 130px;
+    background: #0d0d0d;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+}
+
+.cameraGalleryThumb {
+    width: 38px;
+    height: 38px;
+    border-radius: 6px;
+    background: url("/cronometer/foodPhoto.jpg") center/cover;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+}
+
+.shutter {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 4px solid #ffffff;
+    background: #ffffff;
+    cursor: pointer;
+    padding: 0;
+    box-shadow: inset 0 0 0 3px #0d0d0d;
+    transition: transform 100ms;
+
+    &:active {
+        transform: scale(0.92);
+    }
+}
+
+.cancelBtn {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
+/* ---------------- Matching screen ---------------- */
+.matchingScreen {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #0d0d0d;
+}
+
+.matchingBg {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background: url("/cronometer/foodPhoto.jpg") center/cover;
+}
+
+.matchingBanner {
+    background: rgba(217, 238, 243, 0.96);
+    color: var(--color-deep-jungle-green);
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.scanLine {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: var(--cron-progress, 0%);
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    box-shadow: 0 0 24px 4px rgba(241, 113, 68, 0.6);
+}
+
+.dim {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.detectionBox {
+    position: absolute;
+    border: 1.5px solid var(--cron-detection-color, #6fcd83);
+    border-radius: 4px;
+    animation: cronometer-fadeIn 200ms ease-out;
+}
+
+.detectionBoxTofu {
+    left: 22%;
+    top: 32%;
+    width: 32%;
+    height: 26%;
+    --cron-detection-color: var(--color-emerald-500);
+}
+.detectionBoxPepper {
+    left: 55%;
+    top: 40%;
+    width: 22%;
+    height: 20%;
+    --cron-detection-color: var(--color-honey-yellow-500);
+}
+.detectionBoxCarrot {
+    left: 32%;
+    top: 60%;
+    width: 26%;
+    height: 16%;
+    --cron-detection-color: var(--color-sky-blue-crayola-500);
+}
+
+.detectionLabel {
+    position: absolute;
+    top: -18px;
+    left: 0;
+    font-size: 9px;
+    font-weight: 700;
+    background: var(--cron-detection-color);
+    color: #ffffff;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.matchingFooter {
+    height: 130px;
+    background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.85) 30%);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: -130px;
+    position: relative;
+    z-index: 2;
+}
+
+.matchingStatus {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.matchingSpinner {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: var(--accent);
+    animation: cronometer-spin 700ms linear infinite;
+}
+
+.retakeBtn {
+    background: #ffffff;
+    border: 0;
+    cursor: pointer;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--fg-primary);
+}
+
+/* ---------------- MatchedFoods screen ---------------- */
+.screen {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--bg-app);
+}
+
+.scrollBody {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.photoSummary {
+    padding: 12px 16px 0;
+}
+
+.photoCard {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 6.7px -1px rgba(0, 0, 0, 0.08);
+}
+
+.photoThumb {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: url("/cronometer/foodPhoto.jpg") center/cover;
+    flex-shrink: 0;
+}
+
+.photoMetaTitle {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--fg-primary);
+}
+
+.photoMetaSub {
+    font-size: 11px;
+    color: var(--fg-muted);
+    margin-top: 2px;
+}
+
+.photoMetaWrap {
+    flex: 1;
+    min-width: 0;
+}
+
+.volumeBtn {
+    background: var(--accent);
+    border: 0;
+    cursor: pointer;
+    padding: 0 12px;
+    height: 30px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(241, 113, 68, 0.3);
+}
+
+.volumeBtnLabel {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.matchedHeader {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.toggleAllBtn {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--color-deep-jungle-green);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    padding: 0;
+}
+
+.matchList {
+    background: #ffffff;
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.matchRow {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--bg-subtle);
+    transition: opacity 200ms;
+    opacity: 1;
+
+    &:last-of-type {
+        border-bottom: none;
+    }
+
+    &.matchRowDimmed {
+        opacity: 0.55;
+    }
+}
+
+.matchRowCheck {
+    padding-top: 2px;
+}
+
+.matchRowBody {
+    flex: 1;
+    min-width: 0;
+}
+
+.matchTitleLine {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.matchTitle {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--fg-primary);
+    line-height: 1.3;
+
+    &.matchTitleNotFound {
+        color: var(--color-warning);
+    }
+}
+
+.matchServing {
+    font-size: 11px;
+    color: var(--color-deep-jungle-green);
+    font-weight: 600;
+    margin-top: 3px;
+    text-decoration: underline;
+
+    &.matchServingNotFound {
+        color: var(--color-warning);
+        text-decoration: none;
+    }
+}
+
+.matchMacros {
+    font-size: 10px;
+    color: var(--fg-muted);
+    margin-top: 3px;
+}
+
+.matchConfidenceWrap {
+    margin-top: 6px;
+}
+
+.searchMore {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    padding: 14px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: var(--color-deep-jungle-green);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    border-top: 1px solid var(--bg-subtle);
+}
+
+.collapsibleSection {
+    padding: 16px 20px 0;
+}
+
+.collapsibleHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-subtle);
+    cursor: pointer;
+}
+
+.collapsibleTitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--fg-primary);
+}
+
+.collapsibleMeta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--fg-muted);
+    font-size: 13px;
+}
+
+.chevron {
+    transition: transform 200ms;
+
+    &.chevronOpen {
+        transform: rotate(180deg);
+    }
+}
+
+.energySection {
+    padding: 16px 20px 12px;
+}
+
+.energyHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding-bottom: 12px;
+
+    &.energyHeaderCollapsed {
+        padding-bottom: 0;
+    }
+}
+
+.energyContent {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 0;
+}
+
+.macroRows {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.macroRow {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+}
+
+.macroDot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--cron-macro-color);
+    flex-shrink: 0;
+}
+
+.macroLabel {
+    font-weight: 700;
+    color: var(--fg-primary);
+}
+
+.macroG {
+    flex: 1;
+    color: var(--fg-muted);
+}
+
+.macroPct {
+    font-weight: 600;
+    color: var(--fg-primary);
+}
+
+.footerRow {
+    flex-shrink: 0;
+    padding: 12px 16px 18px;
+    background: #ffffff;
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    gap: 10px;
+}
+
+.footerRowFlex {
+    flex: 1;
+}
+
+.footerRowFlex14 {
+    flex: 1.4;
+}
+
+/* ---------------- SwapSheet ---------------- */
+.swapBackdrop {
+    position: absolute;
+    inset: 0;
+    z-index: 30;
+    background: var(--color-scrim);
+    display: flex;
+    align-items: flex-end;
+    animation: cronometer-fadeIn 200ms ease-out;
+}
+
+.swapSheet {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 20px 20px 0 0;
+    max-height: 75%;
+    display: flex;
+    flex-direction: column;
+    animation: cronometer-slideUp 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.swapHandleWrap {
+    padding: 10px 0 4px;
+    display: flex;
+    justify-content: center;
+}
+
+.swapHandle {
+    width: 36px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--border-subtle);
+}
+
+.swapHeader {
+    padding: 8px 20px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--bg-subtle);
+}
+
+.swapTargetTitle {
+    font-size: 13px;
+    color: var(--fg-primary);
+    margin-top: 4px;
+    font-weight: 600;
+}
+
+.swapClose {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: 6px;
+}
+
+.swapList {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.swapItem {
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--bg-subtle);
+    cursor: pointer;
+    transition: background 150ms;
+    background: transparent;
+
+    &:hover {
+        background: var(--bg-app);
+    }
+}
+
+.swapItemTitle {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--fg-primary);
+    line-height: 1.3;
+}
+
+.swapItemServing {
+    font-size: 11px;
+    color: var(--fg-muted);
+    margin-top: 4px;
+}
+
+.searchMoreBtn {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    padding: 16px 20px;
+    cursor: pointer;
+    color: var(--color-deep-jungle-green);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+/* ---------------- Volume Guide screen ---------------- */
+.targetCardWrap {
+    padding: 0 16px 12px;
+}
+
+.targetCard {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 6.7px -1px rgba(0, 0, 0, 0.08);
+}
+
+.targetCardBody {
+    flex: 1;
+    min-width: 0;
+}
+
+.targetEyebrow {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--fg-muted);
+    margin-bottom: 2px;
+}
+
+.targetName {
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--fg-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.targetCurrent {
+    font-size: 11px;
+    color: var(--accent);
+    margin-top: 2px;
+    font-weight: 600;
+}
+
+.targetNav {
+    display: flex;
+    gap: 4px;
+}
+
+.targetNavBtn {
+    background: var(--bg-subtle);
+    border: 0;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.guideContent {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 16px 16px;
+}
+
+.guideHeader {
+    margin-bottom: 10px;
+}
+
+.guideGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.guideCard {
+    cursor: pointer;
+    padding: 12px 10px 10px;
+    background: #ffffff;
+    border: 2px solid transparent;
+    border-radius: 14px;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+    transition: all 200ms;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    &.guideCardActive {
+        border-color: var(--accent);
+        box-shadow: 0 4px 12px rgba(241, 113, 68, 0.22);
+    }
+}
+
+.guideCardMeta {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 6px;
+    margin-top: 2px;
+}
+
+.guideCardLabel {
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--fg-primary);
+}
+
+.guideCardGrams {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.guideCardSub {
+    font-size: 10px;
+    color: var(--fg-muted);
+    font-weight: 500;
+}
+
+.guideTip {
+    margin-top: 14px;
+    padding: 12px;
+    border-radius: 12px;
+    background: var(--color-mandarin-50);
+    font-size: 11px;
+    color: #8a3a14;
+    line-height: 1.4;
+}
+
+.placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: linear-gradient(135deg, #eceef6 0%, #dde0ec 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+.placeholderHash {
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.4) 0 1px,
+        transparent 1px 12px
+    );
+    opacity: 0.6;
+}
+
+.placeholderIcon {
+    position: relative;
+}
+
+.placeholderLabel {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--fg-secondary);
+    position: relative;
+}
+
+/* ---------------- Volume Calibration screen ---------------- */
+.itemChips {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding: 4px 0 12px;
+    margin-top: 4px;
+}
+
+.itemChip {
+    flex-shrink: 0;
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1.5px solid var(--border-subtle);
+    background: #ffffff;
+    color: var(--fg-primary);
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+
+    &.itemChipActive {
+        border-color: var(--accent);
+        background: var(--color-mandarin-50);
+        color: var(--accent);
+    }
+}
+
+.portionPhoto {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    aspect-ratio: 1;
+    background: url("/cronometer/portionPhoto.png") center/cover;
+    box-shadow: 0 4px 6.7px -1px rgba(0, 0, 0, 0.12);
+}
+
+.portionMeter {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    right: 14px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.portionMeterFingerGlyph {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.portionMeterMain {
+    flex: 1;
+}
+
+.portionMeterEyebrow {
+    font-size: 9px;
+    color: var(--fg-muted);
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.portionMeterFw {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--fg-primary);
+    margin-top: 1px;
+}
+
+.portionMeterCm {
+    font-size: 10px;
+    color: var(--fg-muted);
+    font-weight: 600;
+}
+
+.portionMeterKcal {
+    padding: 3px 7px;
+    border-radius: 999px;
+    background: var(--color-emerald-25);
+    color: #1f7a36;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.aiCard {
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    background: #ffffff;
+    border: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.aiBadge {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--color-sky-blue-crayola-25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-deep-jungle-green);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.aiText {
+    flex: 1;
+    font-size: 11px;
+    color: var(--fg-secondary);
+    line-height: 1.4;
+}
+
+.scrollBodyWithPad {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 16px 14px;
+}
+
+.emptyState {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    text-align: center;
+    color: var(--fg-muted);
+    font-size: 13px;
+}
+
+/* ---------------- Confidence Score screen ---------------- */
+.verifyScroll {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px 16px 16px;
+}
+
+.scoreCard {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 20px 16px;
+    box-shadow: 0 4px 6.7px -1px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scoreCardEyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--fg-muted);
+}
+
+.scoreRingWrap {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin-top: 14px;
+}
+
+.scoreRingSvg {
+    transform: rotate(-90deg);
+}
+
+.scoreRingLabel {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.scoreRingNumber {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--fg-primary);
+    letter-spacing: -1px;
+    line-height: 1;
+}
+
+.scoreRingSuffix {
+    font-size: 10px;
+    color: var(--fg-muted);
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+
+.scoreToneChip {
+    margin-top: 14px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+
+    &.scoreToneChipHigh {
+        background: var(--color-emerald-25);
+        color: #1f7a36;
+    }
+    &.scoreToneChipLow {
+        background: #fce7e1;
+        color: #8a1e07;
+    }
+}
+
+.section {
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.cardList {
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid var(--border-subtle);
+    overflow: hidden;
+}
+
+.scoreRow {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--bg-subtle);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &:last-of-type {
+        border-bottom: none;
+    }
+}
+
+.scoreRowAccent {
+    width: 6px;
+    height: 30px;
+    border-radius: 3px;
+    background: var(--cron-row-color);
+    flex-shrink: 0;
+}
+
+.scoreRowBody {
+    flex: 1;
+    min-width: 0;
+}
+
+.scoreRowLabel {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--fg-primary);
+}
+
+.scoreRowDesc {
+    font-size: 10px;
+    color: var(--fg-muted);
+    margin-top: 2px;
+}
+
+.scoreRowValue {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--fg-primary);
+}
+
+.perItemRow {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--bg-subtle);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &:last-of-type {
+        border-bottom: none;
+    }
+}
+
+.perItemBody {
+    flex: 1;
+    min-width: 0;
+}
+
+.perItemName {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--fg-primary);
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.perItemBar {
+    margin-top: 4px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--bg-subtle);
+    overflow: hidden;
+}
+
+.perItemBarFill {
+    height: 100%;
+    width: var(--cron-bar-width, 0%);
+    background: var(--cron-bar-color, var(--color-emerald-500));
+    transition: width 400ms;
+}
+
+.perItemValue {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--fg-primary);
+    width: 38px;
+    text-align: right;
+    flex-shrink: 0;
+
+    &.perItemValueNotFound {
+        color: var(--color-warning);
+    }
+}
+
+.recommendation {
+    margin-top: 16px;
+    padding: 14px;
+    border-radius: 14px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+
+    &.recommendationLow {
+        background: #fce7e1;
+        border: 1px solid rgba(205, 10, 1, 0.2);
+    }
+
+    &.recommendationHigh {
+        background: var(--color-emerald-25);
+        border: 1px solid rgba(31, 122, 54, 0.18);
+    }
+}
+
+.recommendationIcon {
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.recommendationBody {
+    flex: 1;
+}
+
+.recommendationTitle {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 4px;
+
+    .recommendationLow & {
+        color: #8a1e07;
+    }
+    .recommendationHigh & {
+        color: #1f7a36;
+    }
+}
+
+.recommendationDesc {
+    font-size: 11px;
+    line-height: 1.4;
+
+    .recommendationLow & {
+        color: #8a1e07;
+    }
+    .recommendationHigh & {
+        color: #1f7a36;
+    }
+}
+
+/* ---------------- Custom Food screen ---------------- */
+.customScroll {
+    flex: 1;
+    overflow-y: auto;
+    padding: 4px 16px 16px;
+}
+
+.formCard {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid var(--border-subtle);
+    overflow: hidden;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--bg-subtle);
+    cursor: text;
+
+    &:last-of-type {
+        border-bottom: none;
+    }
+}
+
+.fieldDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--cron-dot-color);
+    flex-shrink: 0;
+}
+
+.fieldLabelWrap {
+    width: 90px;
+    flex-shrink: 0;
+}
+
+.fieldLabel {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--fg-primary);
+}
+
+.fieldHint {
+    font-size: 10px;
+    color: var(--fg-muted);
+    margin-top: 1px;
+}
+
+.fieldInput {
+    flex: 1;
+    border: 0;
+    background: transparent;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--fg-primary);
+    text-align: right;
+    outline: none;
+    min-width: 0;
+}
+
+.fieldSuffix {
+    font-size: 11px;
+    color: var(--fg-muted);
+    font-weight: 600;
+}
+
+.groupChips {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.groupChip {
+    border: 1.5px solid var(--border-subtle);
+    background: #ffffff;
+    color: var(--fg-primary);
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 150ms;
+
+    &.groupChipActive {
+        border-color: var(--accent);
+        background: var(--color-mandarin-50);
+        color: var(--accent);
+    }
+}
+
+.savedHint {
+    margin-top: 16px;
+    padding: 12px;
+    border-radius: 12px;
+    background: var(--color-emerald-25);
+    color: #1f7a36;
+    font-size: 11px;
+    line-height: 1.4;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+.savedHintIcon {
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+/* ---------------- Success screen ---------------- */
+.successScreen {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--bg-app);
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    text-align: center;
+}
+
+.successIcon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--color-emerald-25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    animation: cronometer-popIn 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.successTitle {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--fg-primary);
+    letter-spacing: -0.3px;
+}
+
+.successDesc {
+    font-size: 13px;
+    color: var(--fg-secondary);
+    margin-top: 8px;
+    max-width: 280px;
+    line-height: 1.5;
+}
+
+.successActions {
+    display: flex;
+    gap: 10px;
+    margin-top: 28px;
+}
